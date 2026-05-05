@@ -2,15 +2,19 @@ fn main() {
     // 變數預設是不可變的
     let a = 10;
     // a = 20; Error
+    println!("a is {a}");
 
     // 可以透過 mut 來宣告可變變數
     let mut b = 10;
+    println!("b is {b}");
     b = 20; // OK
+    println!("b is {b}");
 
     // 當宣告變數為常數(constants)則無論如何都無法更改
     const C: u32 = 100;
     // C = 10;  Error
     // const mut C : u32= 100;  Error
+    println!("C is {C}");
 
     // 遮蔽(Shadowing)
     // 變數名稱可以在重複使用
@@ -25,6 +29,9 @@ fn main() {
     println!("length is {}", e); // OK
 
     // 無法變成另一種型別
-    let mut f = "    ";
+    let mut f = "old_f";
+    println!("f is {}", f);
     // f = f.len(); Error
+    f = "new f";
+    println!("f is {}", f)
 }
